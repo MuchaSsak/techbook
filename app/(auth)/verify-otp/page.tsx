@@ -2,7 +2,7 @@
 
 import { PackageCheck } from "lucide-react";
 import { useSearchParams } from "next/navigation";
-import React from "react";
+import React, { Suspense } from "react";
 
 import LoginLink from "@/components/pages-ui/(auth)/LoginLink";
 import Logo from "@/components/svg/Logo";
@@ -37,4 +37,12 @@ function VerifyOTP() {
   );
 }
 
-export default VerifyOTP;
+function VerifyOTPPage() {
+  return (
+    <Suspense>
+      <VerifyOTP />
+    </Suspense>
+  );
+}
+
+export default VerifyOTPPage;
